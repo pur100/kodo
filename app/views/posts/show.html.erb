@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="post_card">
+    <div class=""><%= @post.title %></div>
+    <div class=""><%= @post.description %></div>
+    <div class=""><div><%= @post.created_at %></div><div><%= @post.user.username %></div></div>
+  </div>
+
+
+
+  <div class="event_action">
+    <ul>
+      <li data-toggle="modal" data-target="#editModal">Edit post</li>
+      <li class=""><%= link_to "Delete #{@post.title}",
+            post_path(@post),
+            method: :delete,
+            data: { confirm: "Are you sure?" }
+          %>
+        </li>
+      <li><%= link_to "Back to the Dashboard", user_path(current_user) %></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+</div>
+
+<!-- MODALS -->
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit this post :</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <%= simple_form_for [@post] do |f| %>
+         <%= f.input :title, label: 'Username', :input_html => { :value => @post.title } %>
+         <%= f.input :picture, label: 'Profile picture' %>
+         <%= f.input :description, label: 'Description' %>
+         <%= f.submit "validate", class: "btn btn-primary" %>
+       <% end %>
+      </div>
+    </div>
+  </div>
+</div>

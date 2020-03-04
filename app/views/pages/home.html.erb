@@ -1,3 +1,17 @@
 <h1 class="text-center">HELLO KODO</h1>
 
+<div class="latest_events">
+  <h3>LATEST EVENTS : </h3>
+  <% e = Event.last(3) %>
+  <% e.each do |event| %>
+    <h6><%= event.summarize %></h6>
+  <% end %>
+</div>
 
+<div class="latest_events">
+  <h3>LATEST POSTS : </h3>
+  <% posts = Post.last(3) %>
+  <% posts.each do |post| %>
+    <h6><%= post.summarize %></h6>
+  <% end %>
+</div>

@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users do
-    resources :events
+    resources :events, only: [:new, :create, :edit]
+    resources :posts, only: [:new, :create, :edit]
   end
+  resources :events, except: [:new, :create, :edit]
+  resources :posts, except: [:new, :create, :edit]
 end

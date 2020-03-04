@@ -6,4 +6,8 @@ class Event < ApplicationRecord
   validates :description, presence: true
   validates :location, presence: true
   validates :date, presence: true
+
+  def summarize
+    "#{title} - #{location} - #{date}"
+  end
 end

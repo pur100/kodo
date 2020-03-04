@@ -1,0 +1,8 @@
+<div class="container">
+  <ul>
+    <% @posts.each do |post| %>
+      <li><%= post.title %> - <%= post.created_at %> - <%= post.user.username %></li>
+    <% end %>
+  </ul>
+
+</div>
