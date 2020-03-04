@@ -1,0 +1,25 @@
+<h1>DASHBOARD</h1>
+
+<div class="">
+  <h1><%= @user.mail %></h1>
+  <%= @user.mail %>
+<h1>hello <%= @user.email %></h1>
+</div>
+
+
+<div class="actions">
+  <ul>
+    <li><%= link_to "New event", new_user_event_path(@user.id) %></li>
+    <li><%= link_to "New post", "#" %></li>
+  </ul>
+
+</div>
+
+
+<div class="user_events">
+  <ul>
+     <% @user.events.each do |event|%>
+      <li><%= event.title %> - <%= event.date %> - <%= event.location %></li>
+    <% end %>
+  </ul>
+</div>

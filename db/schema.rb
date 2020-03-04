@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_151859) do
+ActiveRecord::Schema.define(version: 2020_03_03_152333) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_03_03_151859) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
