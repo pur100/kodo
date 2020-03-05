@@ -15,3 +15,17 @@
     <h6><%= post.summarize %></h6>
   <% end %>
 </div>
+
+<h1>HEYYYYY links</h1>
+
+<% if can? :read, @posts %>
+  <%= link_to "View", posts_path %>
+<% end %>
+
+<% if current_user %>
+  <% if current_user.superadmin_role? || current_user.supervisor_role? %>
+    <p>Visible only for superadmins and supervisors! </p>
+  <% end %>
+<% end %>
+
+

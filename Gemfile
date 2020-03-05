@@ -17,6 +17,14 @@ gem 'webpacker', '~> 4.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
+
+gem 'toastr-rails'
+
+gem 'jquery-rails'
+
+gem 'rails_admin', '~> 2.0'
+
+gem 'cancancan'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -37,6 +45,9 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 
 gem 'devise'
+
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 
 
 group :development, :test do

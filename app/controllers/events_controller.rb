@@ -7,10 +7,16 @@ class EventsController < ApplicationController
 
   def new
     @user = current_user
-    @event = Event.new # needed to instantiate the form_for
+    if current_user.superadmin_role? || current_user.supervisor_role?
+      @event = Event.new
+    else
+      redirect_to root_path
+    end
+     # needed to instantiate the form_for
   end
 
   def create
+
    @event = Event.new(event_params)
    @user = current_user
    @event.user = @user
@@ -22,18 +28,21 @@ class EventsController < ApplicationController
   end
 
   def update
+
     @event.update(event_params)
     @event.save # needed to instantiate the form_for
     redirect_to event_path
   end
 
   def edit
+
   end
 
   def show
   end
 
   def destroy
+
     @user = current_user
     @event.destroy
 
