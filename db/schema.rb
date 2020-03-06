@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_114903) do
     t.string "speakers"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_114903) do
     t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
