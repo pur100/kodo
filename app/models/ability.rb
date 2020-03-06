@@ -7,18 +7,18 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
 
-    # user ||= User.new # guest user (not logged in)
-    # if user.superadmin_role?
-    #   can :manage, :all
-    #   can :access, :rails_admin       # only allow admin users to access Rails Admin
-    #   can :manage, :dashboard
-    # end
+    user ||= User.new # guest user (not logged in)
+    if user.superadmin_role?
+      can :manage, :all
+      can :access, :rails_admin       # only allow admin users to access Rails Admin
+      can :manage, :dashboard
+    end
 
-    # if user.supervisor_role?
-    #   can :manage, Post, user_id: user.id
-    #   can :manage, Event, user_id: user.id
-    # end
-    # #
+    if user.supervisor_role?
+      can :manage, Post, user_id: user.id
+      can :manage, Event, user_id: user.id
+    end
+    #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
