@@ -7,19 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-require 'faker'
+# require 'faker'
 
-puts 'Creating 20 fake events...'
-20.times do
-  event = Event.new(
-    user: User.find(1),
-    title:    "#{Faker::Company.name}",
-    location: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-    description: "#{Faker::Lorem.paragraph}",
-    date:  Faker::Date.between_except(from: Date.today, to: 1.year.from_now, excepted: Date.today),
-    speakers: "#{Faker::Name.name}",
-    seats: "#{rand(20..100)}"
-  )
-  event.save!
-end
-puts 'Finished!'
+# puts 'Creating 20 fake events...'
+# 20.times do
+#   event = Event.new(
+#     user: User.find(1),
+#     title:    "#{Faker::Company.name}",
+#     location: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+#     description: "#{Faker::Lorem.paragraph}",
+#     date:  Faker::Date.between_except(from: Date.today, to: 1.year.from_now, excepted: Date.today),
+#     speakers: "#{Faker::Name.name}",
+#     seats: "#{rand(20..100)}"
+#   )
+#   event.save!
+# end
+# puts 'Finished!'
